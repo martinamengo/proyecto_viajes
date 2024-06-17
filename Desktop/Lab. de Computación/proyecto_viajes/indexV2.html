@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Reservas</title>
+    <link rel="stylesheet" href="style_V.css" />
+  </head>
+  <body>
+    <br />
+    <div class="div2">
+      <h2>SISTEMA DE RESERVAS DE VIAJES</h2>
+      <form id="forms">
+        <p>
+          Destino:
+          <select name="destino">
+            <option>Rio de Janeiro</option>
+            <option>Inglaterra</option>
+            <option>Nueva York</option>
+            <option>Sidney</option>
+            <option>Holanda</option>
+          </select>
+        </p>
+        <p>
+          Fecha de salida:
+          <input type="date" name="fecha_salida" value="2024-07-01" />
+        </p>
+        <p>
+          Fecha de regreso:
+          <input type="date" name="fecha_regreso" value="2024-07-10" />
+        </p>
+        <p>
+          Tipo de viaje:
+          <select name="tipo_viaje">
+            <option>Vacaciones familiares</option>
+            <option>Vacaciones en pareja</option>
+            <option>Negocios</option>
+            <option>Crucero</option>
+          </select>
+        </p>
+        <p>
+          Número de pasajeros:
+          <input type="number" name="pasajeros" min="1" max="10" value="1" />
+        </p>
+        <p>
+          Clase del vuelo:
+          <select name="clase_vuelo">
+            <option>Economy</option>
+            <option>Business</option>
+            <option>Primera clase</option>
+          </select>
+        </p>
+        <p>
+          Preferencias de alojamiento:
+          <select name="alojamiento">
+            <option>Hotel</option>
+            <option>Hostel</option>
+            <option>Alquiler de casa</option>
+            <option>Departamento</option>
+          </select>
+        </p>
+        <p>
+          Comentarios adicionales:
+          <textarea
+            name="comentarios"
+            rows="4"
+            cols="50"
+            placeholder="Ingrese cualquier comentario adicional..."
+          ></textarea>
+        </p>
+        <p><input type="submit" value="Reservar" /></p>
+      </form>
+    </div>
+  </body>
+</html>
