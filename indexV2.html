@@ -5,21 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema de Reservas</title>
+    <script src="./cod_java.js"></script>
+
     <link rel="stylesheet" href="style_V.css" />
   </head>
   <body>
     <br />
-    <div class="div2">
-      <h2>SISTEMA DE RESERVAS DE VIAJES</h2>
-      <form id="forms">
+    <div class="div2" style="margin-left: 100px">
+      <h2>Sistema de Reservas de Viajes</h2>
+
+      <form>
         <p>
           Destino:
-          <select name="destino">
-            <option>Rio de Janeiro</option>
-            <option>Inglaterra</option>
-            <option>Nueva York</option>
-            <option>Sidney</option>
-            <option>Holanda</option>
+          <select name="destino" id="destino">
+            <option value="1">Rio de Janeiro</option>
+            <option value="2">Inglaterra</option>
+            <option value="3">Nueva York</option>
+            <option value="4">Sidney</option>
+            <option value="5">Holanda</option>
           </select>
         </p>
         <p>
@@ -32,16 +35,23 @@
         </p>
         <p>
           Tipo de viaje:
-          <select name="tipo_viaje">
-            <option>Vacaciones familiares</option>
-            <option>Vacaciones en pareja</option>
-            <option>Negocios</option>
-            <option>Crucero</option>
+          <select name="tipo_viaje" id="tipo_viaje">
+            <option value="1">Vacaciones familiares</option>
+            <option value="2">Vacaciones en pareja</option>
+            <option value="3">Negocios</option>
+            <option value="4">Crucero</option>
           </select>
         </p>
         <p>
           Número de pasajeros:
-          <input type="number" name="pasajeros" min="1" max="10" value="1" />
+          <input
+            type="number"
+            name="pasajeros"
+            id="pasajeros"
+            min="1"
+            max="10"
+            value="1"
+          />
         </p>
         <p>
           Clase del vuelo:
@@ -61,16 +71,81 @@
           </select>
         </p>
         <p>
-          Comentarios adicionales:
-          <textarea
-            name="comentarios"
-            rows="4"
-            cols="50"
-            placeholder="Ingrese cualquier comentario adicional..."
-          ></textarea>
+          Número de habitaciones:
+          <input
+            type="number"
+            name="habitaciones"
+            id="habitaciones"
+            min="1"
+            max="5"
+            value="1"
+          />
         </p>
-        <p><input type="submit" value="Reservar" /></p>
+        <p>
+          Operación entre habitaciones y pasajeros:
+          <select name="operar" id="opera">
+            <option value="1">Suma</option>
+            <option value="2">Resta</option>
+            <option value="3">Multiplicacion</option>
+          </select>
+        </p>
       </form>
+
+      <button onclick="presupuesto()">Mostrar Presupuesto</button>
+      <button onclick="calcular()">Calcular Operación</button>
+      <p id="resultado2"></p>
+    </div>
+
+    <div class="div2">
+      <h2>Datos del comprador</h2>
+
+      <form>
+        <p>
+          Nombre:
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre" />
+        </p>
+        <p>
+          Apellido:
+          <input
+            type="text"
+            name="apellido"
+            id="apellido"
+            placeholder="Apellido"
+          />
+        </p>
+        <p>
+          DNI
+          <input
+            type="number"
+            name="dni"
+            id="dni"
+            placeholder="indica tu DNI"
+          />
+        </p>
+        <p>
+          Edad: <input type="number" name="edad" id="edad" placeholder="Edad" />
+        </p>
+        <p>
+          Email:
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="usuario@dominio.com"
+          />
+        </p>
+        <p>
+          Género: Femenino
+          <input type="radio" name="genero" id="genero" value="Femenino" />
+          Masculino
+          <input type="radio" name="genero" id="genero" value="Masculino" />
+          Otro
+          <input type="radio" name="genero" id="genero" value="Otro" />
+        </p>
+      </form>
+
+      <button onclick="reservar()">Guardar datos de la reserva</button>
+      <p id="resultado"></p>
     </div>
   </body>
 </html>
